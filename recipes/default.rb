@@ -8,6 +8,9 @@
 #
 
 include_recipe 'dmlb2000_users'
+package 'libvirt-daemon'
+package 'libvirt-daemon-lxc'
+package 'libvirt-daemon-kvm'
 package 'libvirt-devel'
 package 'libffi-devel'
 package 'zlib-devel'
@@ -17,3 +20,7 @@ end
 include_recipe 'build-essential'
 include_recipe 'vagrant'
 include_recipe 'chef-dk'
+
+service 'libvirtd' do
+  action [:enable, :start]
+end
