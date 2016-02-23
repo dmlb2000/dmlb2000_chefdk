@@ -5,3 +5,8 @@ license 'all_rights'
 description 'Installs/Configures dmlb2000_chefdk'
 long_description 'Installs/Configures dmlb2000_chefdk'
 version '0.1.0'
+
+depends 'dmlb2000_users'
+depends 'build-essential'
+depends 'chef-dk'
+depends 'vagrant'
