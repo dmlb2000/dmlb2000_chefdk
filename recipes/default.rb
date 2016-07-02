@@ -21,6 +21,15 @@ include_recipe 'build-essential'
 include_recipe 'vagrant'
 include_recipe 'chef-dk'
 
+%w(
+  chef-client
+  knife
+).each do |bin|
+  link "/usr/bin/#{bin}" do
+    to "/opt/chef/bin/#{bin}"
+  end
+end
+
 service 'libvirtd' do
   action [:enable, :start]
 end
